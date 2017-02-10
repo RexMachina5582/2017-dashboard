@@ -1,35 +1,27 @@
-package org.usfirst.frc.team5495;
+package org.usfirst.frc.team5582;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Properties;
 
-import javax.swing.Action;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
-import javax.swing.JSlider;
 import javax.swing.JTextArea;
 import javax.swing.JWindow;
 import javax.swing.border.EmptyBorder;
-import javax.swing.event.ChangeEvent;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -40,7 +32,6 @@ import com.sun.jna.NativeLibrary;
 import uk.co.caprica.vlcj.binding.LibVlc;
 import uk.co.caprica.vlcj.component.EmbeddedMediaPlayerComponent;
 import uk.co.caprica.vlcj.player.embedded.EmbeddedMediaPlayer;
-import uk.co.caprica.vlcj.player.events.MediaPlayerEventType;
 import uk.co.caprica.vlcj.runtime.RuntimeUtil;
 
 public class Main {
@@ -57,10 +48,10 @@ public class Main {
 	private void start() {
 		loadVlcNatives();
 
-		client = new MessageClient("tcp://10.54.95.85:5888");
+		client = new MessageClient("tcp://10.55.82.85:5888");
 		client.connect();
 		
-		JFrame frame = new JFrame("5495_Dashboard");
+		JFrame frame = new JFrame("5582_Dashboard");
 
 		EmbeddedMediaPlayerComponent videoPlayer = new EmbeddedMediaPlayerComponent();
 		EmbeddedMediaPlayer player = videoPlayer.getMediaPlayer();
