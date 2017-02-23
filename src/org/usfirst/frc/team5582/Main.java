@@ -48,10 +48,11 @@ public class Main {
 	private void start() {
 		loadVlcNatives();
 
-		client = new MessageClient("tcp://10.55.82.85:5888");
+		client = new MessageClient("tcp://10.55.82.2:5888");
+//		client = new MessageClient("tcp://10.0.1.94:5888");
 		client.connect();
 		
-		JFrame frame = new JFrame("5582_Dashboard");
+		JFrame frame = new JFrame("5582Dashboard");
 
 		EmbeddedMediaPlayerComponent videoPlayer = new EmbeddedMediaPlayerComponent();
 		EmbeddedMediaPlayer player = videoPlayer.getMediaPlayer();
@@ -78,7 +79,7 @@ public class Main {
 		
 		propertiesPanel = new PropertiesPanel(client);
 		propertiesPanel.addSlider("target/distance/max", 250);
-		propertiesPanel.addSlider("target/distance/min", 250);
+		propertiesPanel.addSlider("target/distance/min", 20);
 		propertiesPanel.addSlider("target/rotation/speed", 1);
 		propertiesPanel.addSlider("target/rotation/tolerance", .5);
 		propertiesPanel.addSlider("target/distance/tolerance", .15);
@@ -174,8 +175,7 @@ public class Main {
 
 	private void loadVlcNatives() {
 		// This may have to change depending on your system.
-		String nativePath = System.getProperty("os.arch").contains("64") ? "C:\\Program Files\\VideoLAN\\VLC"
-				: "C:\\Program Files (x86)\\VideoLAN\\VLC";
+		String nativePath = "C:\\Program Files (x86)\\VideoLAN\\VLC";
 		NativeLibrary.addSearchPath(RuntimeUtil.getLibVlcLibraryName(), nativePath);
 		Native.loadLibrary(RuntimeUtil.getLibVlcLibraryName(), LibVlc.class);
 	}

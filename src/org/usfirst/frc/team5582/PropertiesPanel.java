@@ -89,7 +89,7 @@ public class PropertiesPanel extends JPanel {
 	
 	public void save(Path destination) {
 		try {
-			propertiesFile.store(Files.newOutputStream(destination), "Robot properties FRC 5495");
+			propertiesFile.store(Files.newOutputStream(destination), "Robot properties FRC 5582");
 		} catch (IOException e) {
 			e.printStackTrace();
 			System.err.println("Error saving properties");
